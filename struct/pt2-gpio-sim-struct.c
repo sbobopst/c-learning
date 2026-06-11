@@ -13,7 +13,7 @@ In genere ti verrà generato un warning o meno, ma per correttezza va dichiarato
 In questo modo il puntatore è anch esso const (non spostabile) il che è corretto logicamente */
 //void gpio_init(GPIO_pin *g, char *name, int pin, int state){
 
-/* CORRETTO: */
+/* CORRETTO: passaggio di g tramite ptr, altrimenti passando per valore non modificherei nulla */
     void gpio_init(GPIO_pin *g, const char *name, int pin, int state){
     /* ERRATO: stai passando indirizzo del primo carattere */
     //strcpy(g->name, *name);
